@@ -2,19 +2,23 @@ package controller;
 
 import java.io.IOException;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import model.Student;
-import dao.StudentDao;
-
-public class HomeController {
-	@RequestMapping(value="/")
-	public ModelAndView listContact(ModelAndView model) throws IOException{
-	    List<Student> listContact = StudentDao.studentList();
-	    model.addObject("listContact", listContact);
-	    model.setViewName("home");
-	 
-	    return model;
+@WebServlet(urlPatterns = {"/home", "/trang-chu"})
+public class HomeController extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		RequestDispatcher rq = req.getRequestDispatcher("/views/home.jsp");
+		rq.forward(req, resp);
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
 	}
 }
