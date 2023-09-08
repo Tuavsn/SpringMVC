@@ -16,7 +16,7 @@ public class ProductDao {
 	
 	public List<ProductModel> getAllProduct() {
 		List<ProductModel> list = new ArrayList<ProductModel>();
-		String query = "SELECT * FROM banhoaqua.product ORDER BY ProductID DESC LIMIT 4";
+		String query = "SELECT * FROM banquanao.product ORDER BY ProductID DESC LIMIT 4";
 		try {
 			conn = new DBConnect().getConnection();
 			ps = conn.prepareStatement(query);

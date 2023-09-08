@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -105,7 +106,7 @@
 								<div class="col-sm">
 									<div class="card">
 										<img class="card-img-top"
-											src="https://dummyimage.com/600x400/55595c/fff"
+											src="${p.imageLink}"
 											alt="Card image cap">
 										<div class="card-body">
 											<h4 class="card-title">
@@ -114,7 +115,10 @@
 											<p class="card-text">${p.description}</p>
 											<div class="row">
 												<div class="col">
-													<p class="btn btn-danger btn-block">${p.price}</p>
+													<p class="btn btn-danger btn-block">
+														<fmt:setLocale value="vi_VN"/>
+														<fmt:formatNumber value="${p.price}" type="currency"/>
+													</p>
 												</div>
 												<div class="col">
 													<a href="cart.html" class="btn btn-success btn-block">Add
