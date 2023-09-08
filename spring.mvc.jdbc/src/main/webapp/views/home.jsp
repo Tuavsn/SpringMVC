@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Free Bootstrap 4 Ecommerce Template</title>
+<title>Shop bán quần áo</title>
 <!-- CSS -->
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -29,10 +29,7 @@
 	<!-- end-header -->
 	<section class="jumbotron text-center">
 		<div class="contsainer">
-			<h1 class="jumbotron-heading">E-COMMERCE BOOTSTRAP THEME</h1>
-			<p class="lead text-muted mb-0">Simple theme for e-commerce buid
-				with Bootstrap 4.0.0. Pages available : home, category, product,
-				cart & contact</p>
+			<h1 class="jumbotron-heading">Website bán quần áo</h1>
 		</div>
 	</section>
 	<div class="container">

@@ -30,7 +30,7 @@
 	
 	<section class="jumbotron text-center">
 		<div class="container">
-			<h1 class="jumbotron-heading">E-COMMERCE CART</h1>
+			<h1 class="jumbotron-heading">Giỏ hàng</h1>
 		</div>
 	</section>
 
@@ -42,10 +42,10 @@
 						<thead>
 							<tr>
 								<th scope="col"></th>
-								<th scope="col">Product</th>
-								<th scope="col">Available</th>
-								<th scope="col" class="text-center">Quantity</th>
-								<th scope="col" class="text-right">Price</th>
+								<th scope="col">Sản phẩm</th>
+								<th scope="col">Trạng thái</th>
+								<th scope="col" class="text-center">Số lượng</th>
+								<th scope="col" class="text-right">Đơn giá</th>
 								<th></th>
 							</tr>
 						</thead>
@@ -91,7 +91,7 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td>Sub-Total</td>
+								<td>Tổng tiền sản phẩm</td>
 								<td class="text-right">255,90 €</td>
 							</tr>
 							<tr>
@@ -99,7 +99,7 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td>Shipping</td>
+								<td>Phí giao hàng</td>
 								<td class="text-right">6,90 €</td>
 							</tr>
 							<tr>
@@ -107,7 +107,7 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td><strong>Total</strong></td>
+								<td><strong>Tổng tiền thanh toán</strong></td>
 								<td class="text-right"><strong>346,90 €</strong></td>
 							</tr>
 						</tbody>
@@ -117,10 +117,10 @@
 			<div class="col mb-2">
 				<div class="row">
 					<div class="col-sm-12  col-md-6">
-						<button class="btn btn-block btn-light">Continue Shopping</button>
+						<button class="btn btn-block btn-light">Tiếp tục mua hàng</button>
 					</div>
 					<div class="col-sm-12 col-md-6 text-right">
-						<button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+						<button class="btn btn-lg btn-block btn-success text-uppercase">Thanh toán ngay</button>
 					</div>
 				</div>
 			</div>

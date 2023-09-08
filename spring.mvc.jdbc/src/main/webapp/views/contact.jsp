@@ -31,9 +31,8 @@
 	
 	<section class="jumbotron text-center">
 		<div class="container">
-			<h1 class="jumbotron-heading">E-COMMERCE CONTACT</h1>
-			<p class="lead text-muted mb-0">Contact Page build with Bootstrap
-				4 !</p>
+			<h1 class="jumbotron-heading">Liên hệ</h1>
+			<p class="lead text-muted mb-0">Hãy gửi thông tin liên hệ tới chúng tôi nếu bạn cần sự trợ giúp!!!</p>
 		</div>
 	</section>
 	<div class="container">
@@ -53,28 +52,27 @@
 			<div class="col">
 				<div class="card">
 					<div class="card-header bg-primary text-white">
-						<i class="fa fa-envelope"></i> Contact us.
+						<i class="fa fa-envelope"></i> Liên hệ chúng tôi.
 					</div>
 					<div class="card-body">
 						<form>
 							<div class="form-group">
-								<label for="name">Name</label> <input type="text"
+								<label for="name">Tên</label> <input type="text"
 									class="form-control" id="name" aria-describedby="emailHelp"
 									placeholder="Enter name" required>
 							</div>
 							<div class="form-group">
-								<label for="email">Email address</label> <input type="email"
+								<label for="email">Địa chỉ Email</label> <input type="email"
 									class="form-control" id="email" aria-describedby="emailHelp"
 									placeholder="Enter email" required> <small
-									id="emailHelp" class="form-text text-muted">We'll never
-									share your email with anyone else.</small>
+									id="emailHelp" class="form-text text-muted">Chúng tôi sẽ không chia sẻ thông tin này đến bất kỳ ai</small>
 							</div>
 							<div class="form-group">
-								<label for="message">Message</label>
+								<label for="message">Tin nhắn</label>
 								<textarea class="form-control" id="message" rows="6" required></textarea>
 							</div>
 							<div class="mx-auto">
-								<button type="submit" class="btn btn-primary text-right">Submit</button>
+								<button type="submit" class="btn btn-primary text-right">Gửi thông tin</button>
 							</div>
 						</form>
 					</div>
@@ -83,7 +81,7 @@
 			<div class="col-12 col-sm-4">
 				<div class="card bg-light mb-3">
 					<div class="card-header bg-success text-white text-uppercase">
-						<i class="fa fa-home"></i> Address
+						<i class="fa fa-home"></i> Địa chỉ cửa hàng
 					</div>
 					<div class="card-body">
 						<p>3 rue des Champs Elysées</p>
