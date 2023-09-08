@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,14 +19,22 @@
 	rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600"
 	rel="stylesheet" type="text/css">
-<link href="<c:url value="/template/css/style.css"/>" rel="stylesheet" type="text/css">
+<link href="<c:url value="/template/css/style.css"/>" rel="stylesheet"
+	type="text/css">
 </head>
 <body>
 
 	<!-- header -->
-	<%@ include file="header.jsp" %>
+	<%@ include file="header.jsp"%>
 	<!-- end-header -->
-	
+	<section class="jumbotron text-center">
+		<div class="contsainer">
+			<h1 class="jumbotron-heading">E-COMMERCE BOOTSTRAP THEME</h1>
+			<p class="lead text-muted mb-0">Simple theme for e-commerce buid
+				with Bootstrap 4.0.0. Pages available : home, category, product,
+				cart & contact</p>
+		</div>
+	</section>
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -102,11 +110,10 @@
 					</div>
 					<div class="card-body">
 						<div class="row">
-							<c:forEach items="${top4product}" var= "p" >
+							<c:forEach items="${top4product}" var="p">
 								<div class="col-sm">
 									<div class="card">
-										<img class="card-img-top"
-											src="${p.imageLink}"
+										<img class="card-img-top" src="${p.imageLink}"
 											alt="Card image cap">
 										<div class="card-body">
 											<h4 class="card-title">
@@ -116,8 +123,8 @@
 											<div class="row">
 												<div class="col">
 													<p class="btn btn-danger btn-block">
-														<fmt:setLocale value="vi_VN"/>
-														<fmt:formatNumber value="${p.price}" type="currency"/>
+														<fmt:setLocale value="vi_VN" />
+														<fmt:formatNumber value="${p.price}" type="currency" />
 													</p>
 												</div>
 												<div class="col">
@@ -247,11 +254,11 @@
 
 
 	<!-- footer -->
-	
-	<%@ include file="footer.jsp" %>
-	
+
+	<%@ include file="footer.jsp"%>
+
 	<!-- end-footer -->
-	
+
 	<!-- JS -->
 	<script src="//code.jquery.com/jquery-3.2.1.slim.min.js"
 		type="text/javascript"></script>

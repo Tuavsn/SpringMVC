@@ -11,31 +11,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoryDao;
-import dao.ProductDao;
 import model.CategoryModel;
-import model.ProductModel;
 
-@WebServlet(urlPatterns = {"/home", "/trang-chu"})
-public class HomeController extends HttpServlet {
+@WebServlet(urlPatterns = { "/cart", "/gio-hang" })
+public class CartController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
-		
-		ProductDao productdao = new ProductDao();
-		List<ProductModel> top4ProductList = productdao.getAllProduct();
-		req.setAttribute("top4product", top4ProductList);
-		
+
 		CategoryDao categorydao = new CategoryDao();
 		List<CategoryModel> allCategoryList = categorydao.getAllCategory();
 		req.setAttribute("allcategory", allCategoryList);
-		
-		RequestDispatcher rq = req.getRequestDispatcher("/views/home.jsp");
+
+		RequestDispatcher rq = req.getRequestDispatcher("/views/cart.jsp");
 		rq.forward(req, resp);
 	}
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		super.doPost(req, resp);
 	}
 }
