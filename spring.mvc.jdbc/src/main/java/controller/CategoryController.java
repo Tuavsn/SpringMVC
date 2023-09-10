@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoryDao;
+import dao.ProductDao;
 import model.CategoryModel;
+import model.ProductModel;
 
 @WebServlet(urlPatterns = { "/category", "/danh-muc-san-pham" })
 public class CategoryController extends HttpServlet {
@@ -21,9 +23,19 @@ public class CategoryController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
+		//Get all category
 		CategoryDao categorydao = new CategoryDao();
 		List<CategoryModel> allCategoryList = categorydao.getAllCategory();
 		req.setAttribute("allcategory", allCategoryList);
+		
+		//Product
+		ProductDao productdao = new ProductDao();
+		//Get all product
+		List<ProductModel> allProductList = productdao.getAllProduct();
+		req.setAttribute("allproduct", allProductList);
+		//Get last product
+		ProductModel lastProduct = productdao.getLastProduct();
+		req.setAttribute("lastproduct", lastProduct);
 
 		RequestDispatcher rq = req.getRequestDispatcher("views/category.jsp");
 		rq.forward(req, resp);

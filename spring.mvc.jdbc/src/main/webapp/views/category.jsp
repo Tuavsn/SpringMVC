@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -54,165 +55,62 @@
 						<i class="fa fa-list"></i> Categories
 					</div>
 					<ul class="list-group category_block">
-						<li class="list-group-item"><a href="category.html">Cras
-								justo odio</a></li>
-						<li class="list-group-item"><a href="category.html">Dapibus
-								ac facilisis in</a></li>
-						<li class="list-group-item"><a href="category.html">Morbi
-								leo risus</a></li>
-						<li class="list-group-item"><a href="category.html">Porta
-								ac consectetur ac</a></li>
-						<li class="list-group-item"><a href="category.html">Vestibulum
-								at eros</a></li>
+						<c:forEach items="${allcategory}" var="category">
+							<li class="list-group-item"><a href="#">${category.categoryName}</a></li>
+						</c:forEach>
 					</ul>
 				</div>
 				<div class="card bg-light mb-3">
-					<div class="card-header bg-success text-white text-uppercase">Last
-						product</div>
+					<div class="card-header bg-success text-white text-uppercase">Last product</div>
 					<div class="card-body">
-						<img class="img-fluid"
-							src="https://dummyimage.com/600x400/55595c/fff" />
-						<h5 class="card-title">Product title</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<p class="bloc_left_price">99.00 $</p>
+						<img class="card-img-top" src="${lastproduct.imageLink}" alt="Card image cap">
+						<h4 class="card-title">
+							<a href="product.html" title="View Product">${lastproduct.productName}</a>
+						</h4>
+						<p class="card-text">${lastproduct.description}</p>
+						<div class="row">
+							<div class="col">
+								<p class="btn btn-danger btn-block">
+									<fmt:setLocale value="vi_VN" />
+									<fmt:formatNumber value="${lastproduct.price}" type="currency" />
+								</p>
+							</div>
+							<div class="col">
+								<a href="#" class="btn btn-success btn-block">Add to cart</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col">
 				<div class="row">
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="card">
-							<img class="card-img-top"
-								src="https://dummyimage.com/600x400/55595c/fff"
-								alt="Card image cap">
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="product.html" title="View Product">Product title</a>
-								</h4>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<div class="row">
-									<div class="col">
-										<p class="btn btn-danger btn-block">99.00 $</p>
-									</div>
-									<div class="col">
-										<a href="#" class="btn btn-success btn-block">Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="card">
-							<img class="card-img-top"
-								src="https://dummyimage.com/600x400/55595c/fff"
-								alt="Card image cap">
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="product.html" title="View Product">Product title</a>
-								</h4>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<div class="row">
-									<div class="col">
-										<p class="btn btn-danger btn-block">99.00 $</p>
-									</div>
-									<div class="col">
-										<a href="#" class="btn btn-success btn-block">Add to cart</a>
+					<c:forEach items="${allproduct}" var="p">
+						<div class="col-12 col-md-6 col-lg-4 mb-3">
+							<div class="card">
+								<img class="card-img-top"
+									src="${p.imageLink}"
+									alt="Card image cap">
+								<div class="card-body">
+									<h4 class="card-title">
+										<a href="product.html" title="View Product">${p.productName}</a>
+									</h4>
+									<p class="card-text">${p.description}</p>
+									<div class="row">
+										<div class="col">
+											<p class="btn btn-danger btn-block">
+												<fmt:setLocale value="vi_VN" />
+												<fmt:formatNumber value="${p.price}" type="currency" />
+											</p>
+										</div>
+										<div class="col">
+											<a href="#" class="btn btn-success btn-block">Add to cart</a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="card">
-							<img class="card-img-top"
-								src="https://dummyimage.com/600x400/55595c/fff"
-								alt="Card image cap">
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="product.html" title="View Product">Product title</a>
-								</h4>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<div class="row">
-									<div class="col">
-										<p class="btn btn-danger btn-block">99.00 $</p>
-									</div>
-									<div class="col">
-										<a href="#" class="btn btn-success btn-block">Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="card">
-							<img class="card-img-top"
-								src="https://dummyimage.com/600x400/55595c/fff"
-								alt="Card image cap">
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="product.html" title="View Product">Product title</a>
-								</h4>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<div class="row">
-									<div class="col">
-										<p class="btn btn-danger btn-block">99.00 $</p>
-									</div>
-									<div class="col">
-										<a href="#" class="btn btn-success btn-block">Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="card">
-							<img class="card-img-top"
-								src="https://dummyimage.com/600x400/55595c/fff"
-								alt="Card image cap">
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="product.html" title="View Product">Product title</a>
-								</h4>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<div class="row">
-									<div class="col">
-										<p class="btn btn-danger btn-block">99.00 $</p>
-									</div>
-									<div class="col">
-										<a href="#" class="btn btn-success btn-block">Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-4">
-						<div class="card">
-							<img class="card-img-top"
-								src="https://dummyimage.com/600x400/55595c/fff"
-								alt="Card image cap">
-							<div class="card-body">
-								<h4 class="card-title">
-									<a href="product.html" title="View Product">Product title</a>
-								</h4>
-								<p class="card-text">Some quick example text to build on the
-									card title and make up the bulk of the card's content.</p>
-								<div class="row">
-									<div class="col">
-										<p class="btn btn-danger btn-block">99.00 $</p>
-									</div>
-									<div class="col">
-										<a href="#" class="btn btn-success btn-block">Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					</c:forEach>
+					
 					<div class="col-12">
 						<nav aria-label="...">
 							<ul class="pagination">

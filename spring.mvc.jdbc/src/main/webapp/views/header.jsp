@@ -37,6 +37,12 @@
 					</ul>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="category">
+						<i class="bi bi-bag-dash-fill" style="font-size: 21px"></i>
+						Sản phẩm
+					</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="contact">
 						<i class="bi bi-person-lines-fill" style="font-size: 21px"></i>
 						Liên hệ

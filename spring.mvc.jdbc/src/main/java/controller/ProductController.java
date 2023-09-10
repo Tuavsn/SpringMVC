@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoryDao;
+import dao.ProductDao;
 import model.CategoryModel;
+import model.ProductModel;
 
 @WebServlet(urlPatterns = { "/product", "/san-pham" })
 public class ProductController extends HttpServlet {
@@ -21,10 +23,11 @@ public class ProductController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
+		//Get all category
 		CategoryDao categorydao = new CategoryDao();
 		List<CategoryModel> allCategoryList = categorydao.getAllCategory();
 		req.setAttribute("allcategory", allCategoryList);
-
+		
 		RequestDispatcher rq = req.getRequestDispatcher("/views/product.jsp");
 		rq.forward(req, resp);
 	}

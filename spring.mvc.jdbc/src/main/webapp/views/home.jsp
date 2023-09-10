@@ -107,7 +107,7 @@
 					</div>
 					<div class="card-body">
 						<div class="row">
-							<c:forEach items="${top4product}" var="p">
+							<c:forEach items="${top4lastproduct}" var="p">
 								<div class="col-sm">
 									<div class="card">
 										<img class="card-img-top" src="${p.imageLink}"

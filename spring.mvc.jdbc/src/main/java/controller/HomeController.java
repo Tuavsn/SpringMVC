@@ -23,13 +23,14 @@ public class HomeController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		
-		ProductDao productdao = new ProductDao();
-		List<ProductModel> top4ProductList = productdao.getAllProduct();
-		req.setAttribute("top4product", top4ProductList);
-		
+		//Get all category
 		CategoryDao categorydao = new CategoryDao();
 		List<CategoryModel> allCategoryList = categorydao.getAllCategory();
 		req.setAttribute("allcategory", allCategoryList);
+		//Get top 4 last product
+		ProductDao productdao = new ProductDao();
+		List<ProductModel> top4LastProductList = productdao.getTop4LastProduct();
+		req.setAttribute("top4lastproduct", top4LastProductList);
 		
 		RequestDispatcher rq = req.getRequestDispatcher("/views/home.jsp");
 		rq.forward(req, resp);
