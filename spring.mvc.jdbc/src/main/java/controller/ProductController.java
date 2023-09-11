@@ -23,11 +23,11 @@ public class ProductController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
-		//Get all category
+		// Get all category
 		CategoryDao categorydao = new CategoryDao();
 		List<CategoryModel> allCategoryList = categorydao.getAllCategory();
 		req.setAttribute("allcategory", allCategoryList);
-		
+
 		RequestDispatcher rq = req.getRequestDispatcher("/views/product.jsp");
 		rq.forward(req, resp);
 	}

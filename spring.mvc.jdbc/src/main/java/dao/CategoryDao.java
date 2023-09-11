@@ -16,7 +16,7 @@ public class CategoryDao {
 	
 	public List<CategoryModel> getAllCategory() {
 		List<CategoryModel> list = new ArrayList<CategoryModel>();
-		String query = "SELECT * FROM banquanao.category ORDER BY CategoryID DESC LIMIT 4";
+		String query = "SELECT * FROM banquanao.category";
 		try {
 			conn = new DBConnect().getConnection();
 			ps = conn.prepareStatement(query);

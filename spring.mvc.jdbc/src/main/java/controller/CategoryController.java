@@ -23,17 +23,23 @@ public class CategoryController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
-		//Get all category
+		// Get CID from JSP
+		String cid = req.getParameter("cid");
+
+		// Get all category
 		CategoryDao categorydao = new CategoryDao();
 		List<CategoryModel> allCategoryList = categorydao.getAllCategory();
 		req.setAttribute("allcategory", allCategoryList);
-		
-		//Product
+
+		// Product
 		ProductDao productdao = new ProductDao();
-		//Get all product
+		// Get all products
 		List<ProductModel> allProductList = productdao.getAllProduct();
 		req.setAttribute("allproduct", allProductList);
-		//Get last product
+		// Get all products by cid
+		List<ProductModel> allProductListByCID = productdao.getAllProductByCID(cid);
+		req.setAttribute("allproductbycid", allProductListByCID);
+		// Get last product
 		ProductModel lastProduct = productdao.getLastProduct();
 		req.setAttribute("lastproduct", lastProduct);
 

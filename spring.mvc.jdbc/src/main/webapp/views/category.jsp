@@ -56,7 +56,7 @@
 					</div>
 					<ul class="list-group category_block">
 						<c:forEach items="${allcategory}" var="category">
-							<li class="list-group-item"><a href="#">${category.categoryName}</a></li>
+							<li class="list-group-item"><a href="category?cid=${category.categoryID}">${category.categoryName}</a></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -84,7 +84,7 @@
 			</div>
 			<div class="col">
 				<div class="row">
-					<c:forEach items="${allproduct}" var="p">
+					<c:forEach items="${allproductbycid}" var="p">
 						<div class="col-12 col-md-6 col-lg-4 mb-3">
 							<div class="card">
 								<img class="card-img-top"
