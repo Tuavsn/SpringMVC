@@ -17,6 +17,11 @@ import model.ProductModel;
 
 @WebServlet(urlPatterns = { "/category", "/danh-muc-san-pham" })
 public class CategoryController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
@@ -35,13 +40,21 @@ public class CategoryController extends HttpServlet {
 		ProductDao productdao = new ProductDao();
 		// Get all products
 		List<ProductModel> allProductList = productdao.getAllProduct();
-		req.setAttribute("allproduct", allProductList);
 		// Get all products by cid
 		List<ProductModel> allProductListByCID = productdao.getAllProductByCID(cid);
-		req.setAttribute("allproductbycid", allProductListByCID);
+		
+		if(cid.equals("0")) {
+			req.setAttribute("product", allProductList);			
+		} else {
+			req.setAttribute("product", allProductListByCID);
+		}
+		
 		// Get last product
 		ProductModel lastProduct = productdao.getLastProduct();
 		req.setAttribute("lastproduct", lastProduct);
+		
+		// Get current category
+		req.setAttribute("categorytag", cid);
 
 		RequestDispatcher rq = req.getRequestDispatcher("views/category.jsp");
 		rq.forward(req, resp);

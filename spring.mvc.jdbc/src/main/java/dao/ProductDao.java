@@ -110,4 +110,30 @@ public class ProductDao {
 		}
 		return lastProduct;
 	}
+	
+	public ProductModel getProductByPID(String pid) {
+		ProductModel product = null;
+		String query = "SELECT * FROM banquanao.product WHERE ProductID = ?";
+		try {
+			conn = new DBConnect().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, pid);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				product = new ProductModel(
+						rs.getInt(1)
+						, rs.getString(2)
+						, rs.getString(3)
+						, rs.getInt(4)
+						, rs.getString(5)
+						, rs.getInt(6)
+						, rs.getInt(7)
+						, rs.getInt(8));
+			}
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return product;
+	}
 }

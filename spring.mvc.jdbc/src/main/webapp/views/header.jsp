@@ -37,7 +37,7 @@
 					</ul>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="category">
+					<a class="nav-link" href="category?cid=0">
 						<i class="bi bi-bag-dash-fill" style="font-size: 21px"></i>
 						Sản phẩm
 					</a>

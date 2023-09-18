@@ -17,6 +17,11 @@ import model.ProductModel;
 
 @WebServlet(urlPatterns = { "/product", "/san-pham" })
 public class ProductController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
@@ -28,6 +33,13 @@ public class ProductController extends HttpServlet {
 		List<CategoryModel> allCategoryList = categorydao.getAllCategory();
 		req.setAttribute("allcategory", allCategoryList);
 
+		// Get pid
+		String pid = req.getParameter("pid");
+		// Get product by pid
+		ProductDao productdao  = new ProductDao();
+		ProductModel product = productdao.getProductByPID(pid);
+		req.setAttribute("product", product);
+		
 		RequestDispatcher rq = req.getRequestDispatcher("/views/product.jsp");
 		rq.forward(req, resp);
 	}

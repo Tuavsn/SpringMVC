@@ -56,7 +56,9 @@
 					</div>
 					<ul class="list-group category_block">
 						<c:forEach items="${allcategory}" var="category">
-							<li class="list-group-item"><a href="category?cid=${category.categoryID}">${category.categoryName}</a></li>
+							<a href="category?cid=${category.categoryID}">
+								<li class="list-group-item ${categorytag == category.categoryID ? "active" : ""}">${category.categoryName}</li>
+							</a>
 						</c:forEach>
 					</ul>
 				</div>
@@ -84,7 +86,7 @@
 			</div>
 			<div class="col">
 				<div class="row">
-					<c:forEach items="${allproductbycid}" var="p">
+					<c:forEach items="${product}" var="p">
 						<div class="col-12 col-md-6 col-lg-4 mb-3">
 							<div class="card">
 								<img class="card-img-top"
@@ -92,7 +94,7 @@
 									alt="Card image cap">
 								<div class="card-body">
 									<h4 class="card-title">
-										<a href="product.html" title="View Product">${p.productName}</a>
+										<a href="product?pid=${p.productID}" title="View Product">${p.productName}</a>
 									</h4>
 									<p class="card-text">${p.description}</p>
 									<div class="row">

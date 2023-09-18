@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -55,8 +56,10 @@
 				<div class="card bg-light mb-3">
 					<div class="card-body">
 						<a href="" data-toggle="modal" data-target="#productModal"> <img
-							class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" />
-							<p class="text-center">Zoom</p>
+							class="img-fluid" src="${product.imageLink}" />
+							<p class="text-center">
+								<i class="bi bi-zoom-in p" style="font-size:22px"></i>
+							</p>
 						</a>
 					</div>
 				</div>
@@ -66,8 +69,11 @@
 			<div class="col-12 col-lg-6 add_to_cart_block">
 				<div class="card bg-light mb-3">
 					<div class="card-body">
-						<p class="price">99.00 $</p>
-						<p class="price_discounted">149.90 $</p>
+						<h1 class="card-title text-center">${product.productName}</h2>
+							<p class="price">Giá: 
+								<fmt:setLocale value="vi_VN" />
+								<fmt:formatNumber value="${product.price}" type="currency" />
+							</p>
 						<form method="get" action="cart.html">
 							<div class="form-group">
 								<label for="colors">Color</label> <select class="custom-select"
@@ -217,16 +223,16 @@
 		aria-labelledby="productModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="productModalLabel">Product title</h5>
+				<div class="modal-header grow-1">
+					<h5 class="modal-title" id="productModalLabel">${product.productName}</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body text-center">
 					<img class="img-fluid"
-						src="https://dummyimage.com/1200x1200/55595c/fff" />
+						src="${product.imageLink}" />
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
