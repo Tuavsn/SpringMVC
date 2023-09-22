@@ -136,4 +136,29 @@ public class ProductDao {
 		
 		return product;
 	}
+	
+	public List<ProductModel> getSearchProducts(String keyword) {
+		List<ProductModel> list = new ArrayList<ProductModel>();
+		String query = "SELECT * from product where ProductName like ?";
+		try {
+			conn = new DBConnect().getConnection();
+			ps = conn.prepareStatement(query);
+			ps.setString(1, '%'+keyword+'%');
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				list.add(new ProductModel(
+						rs.getInt(1)
+						, rs.getString(2)
+						, rs.getString(3)
+						, rs.getInt(4)
+						, rs.getString(5)
+						, rs.getInt(6)
+						, rs.getInt(7)
+						, rs.getInt(8)));
+			}
+		} catch (Exception e) {
+
+		}
+		return list;
+	}
 }

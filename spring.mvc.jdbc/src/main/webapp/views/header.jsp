@@ -32,7 +32,7 @@
 			 		</a>
 					<ul class="dropdown-menu">
 						<c:forEach items="${allcategory}" var="category">
-							<li><a class="dropdown-item" href="#">${category.categoryName}</a></li>
+							<li><a class="dropdown-item" href="category?cid=${category.categoryID}">${category.categoryName}</a></li>
 						</c:forEach>
 					</ul>
 				</li>
@@ -50,11 +50,11 @@
 				</li>
 			</ul>
 
-			<form class="form-inline my-2 my-lg-0">
+			<form action="search" class="form-inline my-2 my-lg-0">
 				<div class="input-group input-group-sm">
-					<input type="text" class="form-control" placeholder="Tìm sản phẩm...">
+					<input type="text" name="keyword" class="form-control" placeholder="Tìm sản phẩm...">
 					<div class="input-group-append">
-						<button type="button" class="btn btn-secondary btn-number">
+						<button type="submit" class="btn btn-secondary btn-number">
 							<i class="fa fa-search"></i>
 						</button>
 					</div>
